@@ -20,4 +20,43 @@
         <item name="android:background">?android:attr/listDivider</item>
     </style>
 
+
+    <style name="LinearAttributesNames">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1dp</item>
+        <item name="android:background">?android:attr/listDivider</item>
+    </style>
+
+
+    <style name="ItemDetailLinearAttributesTitles">
+        <item name= "android:layout_marginTop">@dimen/margin_default_value</item>
+        <item name= "android:fontFamily">@font/proxima_nova_light</item>
+        <item name= "android:textSize">@dimen/size_font_detail_item_feature_name</item>
+        <item name= "android:layout_width">wrap_content</item>
+        <item name= "android:layout_height">wrap_content</item>
+    </style>
+
+
+    <style name="ItemDetailLinearAttributesValues">
+        <item name= "android:layout_marginTop">@dimen/margin_extraextralight_value</item>
+        <item name= "android:fontFamily">@font/proxima_nova_reg</item>
+        <item name= "android:textSize">@dimen/size_font_detail_item_feature_value</item>
+        <item name= "android:layout_width">wrap_content</item>
+        <item name= "android:layout_height">wrap_content</item>
+    </style>
+
+
+    <style name="AllwrapContentStyle">
+        <item name= "android:layout_width">wrap_content</item>
+        <item name= "android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="WidthMatchParentHeightWrapContent">
+        <item name= "android:layout_width">match_parent</item>
+        <item name= "android:layout_height">wrap_content</item>
+    </style>
+
+
+
+
 </resources>

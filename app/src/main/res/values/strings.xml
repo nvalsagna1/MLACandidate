@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">MLCandidateApp</string>
+    <string name="app_name">MLACandidate</string>
 
     <string name="text_home">NUNCA DEJES DE BUSCAR</string>
     <string name="text_sold">  Vendidos</string>
@@ -18,14 +18,6 @@
     <string name="text_new_api_value">new</string>
 
     <string name="text_find_null_value">Ups! Ingrese un valor de búsqueda.</string>
-
-
-
-
-
-
-
-
 
 
 </resources>
