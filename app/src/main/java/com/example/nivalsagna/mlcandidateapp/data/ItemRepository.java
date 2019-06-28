@@ -56,21 +56,49 @@ public class ItemRepository {
 
         // REVISAR PARAMETRO HARCODEADO
 //        Call<ItemDetail> requestItemDetail = itemService.detailsItem("MLA793023477");
-        Call<ItemDetail> requestItemDetail = itemService.detailsItem(datoBusqueda);
-        requestItemDetail.enqueue(new Callback<ItemDetail>() {
+//        Call<ItemDetail> requestItemDetail = itemService.detailsItem(datoBusqueda);
+//        requestItemDetail.enqueue(new Callback<ItemDetail>() {
+//            @Override
+//            public void onResponse(Call<ItemDetail> call, Response<ItemDetail> response) {
+//                if (response.isSuccessful()) {
+//                    itemDetails.setValue(response.body());
+//                }
+//                else{
+//                    //Error http no 500
+//                }
+//            }
+//            @Override
+//            public void onFailure(Call<ItemDetail> call, Throwable t) {
+//            }
+//        });
+
+
+        Observer<ItemDetail> observer = new Observer<ItemDetail>() {
             @Override
-            public void onResponse(Call<ItemDetail> call, Response<ItemDetail> response) {
-                if (response.isSuccessful()) {
-                    itemDetails.setValue(response.body());
-                }
-                else{
-                    //Error http no 500
-                }
+            public void onSubscribe(Disposable d) {
+
             }
+
             @Override
-            public void onFailure(Call<ItemDetail> call, Throwable t) {
+            public void onNext(ItemDetail itemDetail) {
+                itemDetails.setValue(itemDetail);
             }
-        });
+
+            @Override
+            public void onError(Throwable e) {
+
+            }
+
+            @Override
+            public void onComplete() {
+
+            }
+        };
+
+        ItemClient.getInstance().itemDetails(datoBusqueda)
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(observer);
         return itemDetails;
     }
 

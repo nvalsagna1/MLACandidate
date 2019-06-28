@@ -2,6 +2,7 @@ package com.example.nivalsagna.mlcandidateapp.service;
 
 import com.example.nivalsagna.mlcandidateapp.common.Constants;
 import com.example.nivalsagna.mlcandidateapp.model.ItemCatalog;
+import com.example.nivalsagna.mlcandidateapp.model.ItemDetail;
 
 import io.reactivex.Observable;
 import retrofit2.Retrofit;
@@ -37,5 +38,9 @@ public class ItemClient {
 
     public Observable<ItemCatalog> listItem(String datobusqueda)
     {return itemService.listItems(datobusqueda);
+    }
+
+    public Observable<ItemDetail> itemDetails (String datobusqueda)
+    {return itemService.detailsItem(datobusqueda);
     }
 }

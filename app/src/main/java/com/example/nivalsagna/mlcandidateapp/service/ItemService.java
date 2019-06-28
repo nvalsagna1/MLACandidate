@@ -11,13 +11,16 @@ import retrofit2.http.Query;
 
 public interface ItemService {
 
-    @GET("sites/MLA/search")
-    Call<ItemCatalog> listItemsANT(@Query("q") String parametro);
+//    @GET("sites/MLA/search")
+//    Call<ItemCatalog> listItemsANT(@Query("q") String parametro);
 
     @GET("sites/MLA/search")
     Observable<ItemCatalog> listItems(@Query("q") String parametro);
 
 
+//    @GET("items/{iditem}")
+//    Call<ItemDetail> detailsItem(@Path("iditem") String iditem);
+
     @GET("items/{iditem}")
-    Call<ItemDetail> detailsItem(@Path("iditem") String iditem);
+    Observable<ItemDetail> detailsItem(@Path("iditem") String iditem);
 }

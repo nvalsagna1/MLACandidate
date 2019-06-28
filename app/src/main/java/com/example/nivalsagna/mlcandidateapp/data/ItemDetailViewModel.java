@@ -19,8 +19,14 @@ public class ItemDetailViewModel extends AndroidViewModel {
         //itemDetailLiveData = itemRepository.getitemdetails(datoBusqueda);
     }
 
-    public LiveData<ItemDetail> getItemDetails(String datoBusqueda){
-        itemDetailLiveData = itemRepository.getitemdetails(datoBusqueda);
+    public LiveData<ItemDetail> getItemDetails(){
+        //itemDetailLiveData = itemRepository.getitemdetails(datoBusqueda);
         return itemDetailLiveData;
     }
+
+    public void getNewItemDetails (String datoBusqueda){
+        itemDetailLiveData = itemRepository.getitemdetails(datoBusqueda);
+    }
+
+
 }

@@ -89,13 +89,11 @@ public class ItemDetailFragment extends Fragment {
         tvAttributeValue6 = view.findViewById(R.id.tvItemDetailFeatureValue6);
         viewPager = view.findViewById(R.id.view_pager);
 
-        Bundle b = getArguments();
-        String datobusqueda = b.getString("iditem");
 
         //itemDetailViewModel= ItemDetailViewModel.getInstance(getActivity().getApplication(),datobusqueda);
         itemDetailViewModel = ViewModelProviders.of(getActivity())
                 .get(ItemDetailViewModel.class);
-        itemDetailViewModel.getItemDetails(datobusqueda).observe( getViewLifecycleOwner(), new Observer<ItemDetail>() {
+        itemDetailViewModel.getItemDetails().observe( getViewLifecycleOwner(), new Observer<ItemDetail>() {
             @Override
             public void onChanged(@Nullable ItemDetail itemDetail) {
                 setItemDetailsValues(itemDetail);

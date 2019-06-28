@@ -52,17 +52,17 @@ public class ItemSearchFragment extends Fragment {
 
         btBuscar.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Bundle b = new Bundle();
+               // Bundle b = new Bundle();
                 datoBusqueda = etBuscar.getText().toString();
-                b.putString("dato",datoBusqueda);
+                //b.putString("dato",datoBusqueda);
                 Fragment itemListFragment = new ItemListFragment();
 
 
                 itemCatalogViewModel = ViewModelProviders.of(
                         getActivity()).get(ItemCatalogViewModel.class);
-                itemCatalogViewModel.fetchItemCatalog(datoBusqueda);
+                itemCatalogViewModel.getNewItemCatalog(datoBusqueda);
 
-                itemListFragment.setArguments(b);
+                //itemListFragment.setArguments(b);
                 getFragmentManager()
                         .beginTransaction()
                         .replace(R.id.fragmentContainer, itemListFragment)

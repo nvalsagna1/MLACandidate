@@ -24,7 +24,7 @@ public class ItemCatalogViewModel extends AndroidViewModel {
         return itemCatalogLiveData;
     }
 
-    public void fetchItemCatalog(String datoBusqueda){
+    public void getNewItemCatalog(String datoBusqueda){
         itemCatalogLiveData = itemRepository.getitemcatalog(datoBusqueda);
     }
 

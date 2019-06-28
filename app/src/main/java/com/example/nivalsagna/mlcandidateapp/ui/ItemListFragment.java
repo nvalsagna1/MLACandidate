@@ -19,6 +19,7 @@ import android.widget.Toast;
 
 import com.example.nivalsagna.mlcandidateapp.R;
 import com.example.nivalsagna.mlcandidateapp.data.ItemCatalogViewModel;
+import com.example.nivalsagna.mlcandidateapp.data.ItemDetailViewModel;
 import com.example.nivalsagna.mlcandidateapp.model.Item;
 import com.example.nivalsagna.mlcandidateapp.model.ItemCatalog;
 
@@ -36,6 +37,7 @@ public class ItemListFragment extends Fragment {
     private RecyclerView itemrecyclerView;
     private List<Item> itemList;
     private ItemCatalogViewModel itemCatalogViewModel;
+    private ItemDetailViewModel itemDetailViewModel;
     private ItemRecyclerViewAdapter adapter;
     private String idItemClicked = "";
     private String titleItemClicked = "";
@@ -80,12 +82,16 @@ public class ItemListFragment extends Fragment {
             adapter.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Bundle b = new Bundle();
+                   // Bundle b = new Bundle();
                     idItemClicked = itemList.get(itemrecyclerView.getChildAdapterPosition(v)).getId();
-                    b.putString("iditem",idItemClicked);
+                    //b.putString("iditem",idItemClicked);
+
+                    itemDetailViewModel = ViewModelProviders.of(
+                            getActivity()).get(ItemDetailViewModel.class);
+                    itemDetailViewModel.getNewItemDetails(idItemClicked);
 
                     Fragment itemDetailFragment = new ItemDetailFragment();
-                    itemDetailFragment.setArguments(b);
+                    //itemDetailFragment.setArguments(b);
                     getFragmentManager()
                             .beginTransaction()
                             .replace(R.id.fragmentContainer, itemDetailFragment)
@@ -107,8 +113,8 @@ public class ItemListFragment extends Fragment {
 
             //itemCatalogViewModel = new ItemCatalogViewModel(getActivity().getApplication());
 
-            Bundle b = getArguments();
-            String datobusqueda = b.getString("dato");
+           // Bundle b = getArguments();
+          //  String datobusqueda = b.getString("dato");
 
             //itemCatalogViewModel = ItemCatalogViewModel.getInstance(getActivity().getApplication());
             itemCatalogViewModel = ViewModelProviders.of(
