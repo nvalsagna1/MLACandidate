@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">MLCandidateApp</string>
+
+    <string name="text_home">NUNCA DEJES DE BUSCAR</string>
+    <string name="text_sold"> -  Vendidos</string>
+    <string name="text_features">Características</string>
+    <string name="text_condition">Condición Producto</string>
+    <string name="text_accept_mp">Acepta MercadoPago</string>
+
+
+</resources>
