@@ -10,8 +10,10 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
+import com.example.nivalsagna.mlcandidateapp.R;
 import com.example.nivalsagna.mlcandidateapp.model.ItemPicture;
 import com.squareup.picasso.Picasso;
+import com.squareup.picasso.Target;
 
 import java.util.List;
 
@@ -37,15 +39,17 @@ public class ItemViewPagerAdapter extends PagerAdapter {
     @NonNull
     @Override
     public Object instantiateItem(@NonNull ViewGroup container, int position) {
+
         ImageView imageView = new ImageView(context);
         Picasso.get()
                 .load(imageUrls.get(position).getSecure_url())
                 .fit()
                 //.centerCrop()
+                .error(context.getResources().getDrawable(R.drawable.ic_block_black_24dp))
                 .centerInside()
                 .into(imageView);
-        container.addView(imageView);
 
+        container.addView(imageView);
         return imageView;
     }
 

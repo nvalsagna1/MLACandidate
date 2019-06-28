@@ -10,6 +10,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -72,7 +73,6 @@ public class ItemDetailFragment extends Fragment {
         tvTitle = view.findViewById(R.id.tvItemDetailTitle);
         tvPrice = view.findViewById(R.id.tvItemDetailPrice);
         tvCondition = view.findViewById(R.id.tvItemDetailCondition);
-        //tvAvailableQuantity = view.findViewById(R.id.);
         tvSoldQuantity = view.findViewById(R.id.tvItemDetailSold);
         tvMercadoPago = view.findViewById(R.id.tvItemDetailAcceptMercadopago);
         tvAttributeTile1 =view.findViewById(R.id.tvItemDetailFeatureName1);
@@ -89,14 +89,13 @@ public class ItemDetailFragment extends Fragment {
         tvAttributeValue6 = view.findViewById(R.id.tvItemDetailFeatureValue6);
         viewPager = view.findViewById(R.id.view_pager);
 
-
-        //itemDetailViewModel= ItemDetailViewModel.getInstance(getActivity().getApplication(),datobusqueda);
         itemDetailViewModel = ViewModelProviders.of(getActivity())
                 .get(ItemDetailViewModel.class);
         itemDetailViewModel.getItemDetails().observe( getViewLifecycleOwner(), new Observer<ItemDetail>() {
             @Override
             public void onChanged(@Nullable ItemDetail itemDetail) {
                 setItemDetailsValues(itemDetail);
+                Log.i("getItemDetail","Seteo de datos del ItemDetailViewModel");
             }
         });
 
@@ -131,9 +130,6 @@ public class ItemDetailFragment extends Fragment {
         } else{
             tvMercadoPago.setText(getResources().getString(R.string.text_afirmative));
         }
-
-
-        //ACA SETEO LOS VALORES DE LA VISTA Al Adapter
 
         lstItemPictures = itemDetail.getPictures();
         ItemViewPagerAdapter adapter = new ItemViewPagerAdapter(getActivity(), lstItemPictures);

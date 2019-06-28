@@ -14,13 +14,10 @@ public class ItemDetailViewModel extends AndroidViewModel {
 
     public ItemDetailViewModel(@NonNull Application application){
         super(application);
-        //itemRepository = new ItemRepository("itemdetails",datoBusqueda);
         itemRepository = ItemRepository.getInstance();
-        //itemDetailLiveData = itemRepository.getitemdetails(datoBusqueda);
     }
 
     public LiveData<ItemDetail> getItemDetails(){
-        //itemDetailLiveData = itemRepository.getitemdetails(datoBusqueda);
         return itemDetailLiveData;
     }
 

@@ -21,7 +21,6 @@ public class MainActivity extends AppCompatActivity {
             getSupportFragmentManager()
                     .beginTransaction()
                     .replace(R.id.fragmentContainer, new ItemSearchFragment())
-                    //.addToBackStack("itemsearchfragment")
                     .commit();
         }
     }

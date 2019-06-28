@@ -14,23 +14,6 @@ public class Item {
         this.id = id;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public void setPrice(double price) {
-        this.price = price;
-    }
-
-    public void setCurrency_id(String currency_id) {
-        this.currency_id = currency_id;
-    }
-
-    public void setThumbnail(String thumbnail) {
-        this.thumbnail = thumbnail;
-    }
-
-
     public String getId() {
         return id;
     }
@@ -50,14 +33,5 @@ public class Item {
     public String getThumbnail() {
         return thumbnail;
     }
-
-    public Item(String id, String title, double price, String currency_id, String thumbnail) {
-        this.id = id;
-        this.title = title;
-        this.price = price;
-        this.currency_id = currency_id;
-        this.thumbnail = thumbnail;
-    }
-
 
 }

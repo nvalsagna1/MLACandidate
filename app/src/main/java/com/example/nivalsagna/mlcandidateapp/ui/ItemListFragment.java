@@ -11,6 +11,7 @@ import android.support.v4.app.Fragment;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -40,12 +41,8 @@ public class ItemListFragment extends Fragment {
     private ItemDetailViewModel itemDetailViewModel;
     private ItemRecyclerViewAdapter adapter;
     private String idItemClicked = "";
-    private String titleItemClicked = "";
 
-    /**
-     * Mandatory empty constructor for the fragment manager to instantiate the
-     * fragment (e.g. upon screen orientation changes).
-     */
+
     public ItemListFragment() {
     }
 
@@ -82,41 +79,31 @@ public class ItemListFragment extends Fragment {
             adapter.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                   // Bundle b = new Bundle();
                     idItemClicked = itemList.get(itemrecyclerView.getChildAdapterPosition(v)).getId();
-                    //b.putString("iditem",idItemClicked);
 
                     itemDetailViewModel = ViewModelProviders.of(
                             getActivity()).get(ItemDetailViewModel.class);
                     itemDetailViewModel.getNewItemDetails(idItemClicked);
 
+                    Log.i("getItemDetailCall","Búsqueda de detalles de un producto, ID = " + idItemClicked);
+
                     Fragment itemDetailFragment = new ItemDetailFragment();
-                    //itemDetailFragment.setArguments(b);
                     getFragmentManager()
                             .beginTransaction()
                             .replace(R.id.fragmentContainer, itemDetailFragment)
                             .addToBackStack("itemdetailfragment")
                             .commit();
-
                 }
             });
 
             itemrecyclerView.setAdapter(adapter);
-
         return view;
-
     }
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
-            //itemCatalogViewModel = new ItemCatalogViewModel(getActivity().getApplication());
-
-           // Bundle b = getArguments();
-          //  String datobusqueda = b.getString("dato");
-
-            //itemCatalogViewModel = ItemCatalogViewModel.getInstance(getActivity().getApplication());
             itemCatalogViewModel = ViewModelProviders.of(
                     getActivity()).get(ItemCatalogViewModel.class);
             itemCatalogViewModel.getItemCatalog().observe( getViewLifecycleOwner(), new Observer<ItemCatalog>() {
@@ -124,10 +111,9 @@ public class ItemListFragment extends Fragment {
                 public void onChanged(@Nullable ItemCatalog itemCatalog) {
                     itemList = itemCatalog.getResults();
                     adapter.setData(itemList);
+                    Log.i("getItemCatalog","Seteo de datos del ItemCatalogViewModel");
                 }
             });
-
-
-
     }
+
 }

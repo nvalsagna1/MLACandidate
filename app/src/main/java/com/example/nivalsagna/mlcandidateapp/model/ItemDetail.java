@@ -12,7 +12,6 @@ public class ItemDetail {
     private String condition;
     private List<ItemPicture> pictures;
     private Boolean accepts_mercadopago;
-    //private shipping shipping;
     private List<ItemAttribute> attributes;
 
     public ItemDetail(String id, String title, Double price, String currency_id, int available_quantity, int sold_quantity, String condition, List<ItemPicture> pictures, Boolean accepts_mercadopago, List<ItemAttribute> attributes) {
@@ -42,10 +41,6 @@ public class ItemDetail {
 
     public String getCurrency_id() {
         return currency_id;
-    }
-
-    public int getAvailable_quantity() {
-        return available_quantity;
     }
 
     public int getSold_quantity() {
