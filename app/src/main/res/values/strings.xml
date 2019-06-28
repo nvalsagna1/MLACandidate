@@ -2,10 +2,26 @@
     <string name="app_name">MLCandidateApp</string>
 
     <string name="text_home">NUNCA DEJES DE BUSCAR</string>
-    <string name="text_sold"> -  Vendidos</string>
+    <string name="text_sold">  Vendidos</string>
     <string name="text_features">Características</string>
     <string name="text_condition">Condición Producto</string>
-    <string name="text_accept_mp">Acepta MercadoPago</string>
+    <string name="text_accept_mp">¿Acepta MercadoPago?</string>
+
+    <string name="text_condition_new">Nuevo</string>
+    <string name="text_condition_used">Usado</string>
+    <string name="text_currency_dolar">U$S</string>
+    <string name="text_currency_pesos">$</string>
+    <string name="text_negative">No</string>
+    <string name="text_afirmative">Sí</string>
+
+    <string name="text_dolar_api_value">USD</string>
+    <string name="text_new_api_value">new</string>
+
+
+
+
+
+
 
 
 </resources>

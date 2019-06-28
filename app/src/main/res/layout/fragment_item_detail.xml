@@ -1,346 +1,350 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".ui.ItemDetailFragment">
 
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:background="@color/colorWhite"
-        android:layout_weight="2">
-
-        <android.support.v4.view.ViewPager
-            android:id="@+id/view_pager"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-        </android.support.v4.view.ViewPager>
-    </LinearLayout>
-
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:background="@color/colorGrey"
-        android:orientation="vertical"
-        android:layout_weight="3">
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_margin="@dimen/margin_default_value">
-
-            <TextView
-                android:id="@+id/tvItemDetailCondition"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="@dimen/margin_extrabig_value"
-                android:fontFamily="@font/proxima_nova_light"
-                android:textSize="@dimen/size_font_detail_item_condition"/>
-
-            <TextView
-                android:id="@+id/tvItemDetailSold"
-                android:layout_width="wrap_content"
-                android:layout_marginEnd="@dimen/margin_extraextralight_value"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/proxima_nova_light"
-                android:textSize="@dimen/size_font_detail_item_condition"/>
-
-            <TextView
-                android:id="@+id/tvItemDetailSoldDeference"
-                android:layout_width="wrap_content"
-                android:text="@string/text_sold"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/proxima_nova_light"
-                android:textSize="@dimen/size_font_detail_item_condition"/>
-
-
-        </LinearLayout>
-
-        <TextView
-            android:id="@+id/tvItemDetailTitle"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/margin_default_value"
-            android:layout_marginRight="@dimen/margin_default_value"
-            android:fontFamily="@font/proxima_nova_reg"
-            android:textSize="@dimen/size_font_detail_item_title"/>
-
-        <TextView
-            android:id="@+id/tvItemDetailPrice"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/margin_default_value"
-            android:fontFamily="@font/proxima_nova_bold"
-            android:textSize="@dimen/size_font_detail_item_price"
-            />
-        <View
-            style="@style/Divider" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/margin_default_value"
-            android:fontFamily="@font/proxima_nova_reg"
-            android:textSize="@dimen/size_font_detail_item_title_features"
-            android:textStyle="bold"
-            android:text="@string/text_features"/>
-
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:background="@color/colorGrey"
+            android:orientation="vertical">
+
+
+            <android.support.v4.view.ViewPager
+                android:id="@+id/view_pager"
+                android:layout_width="wrap_content"
+                android:background="@color/colorWhite"
+                android:layout_height="230dp">
+            </android.support.v4.view.ViewPager>
 
             <LinearLayout
-                android:layout_width="0dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_margin="@dimen/margin_default_value"
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/tvItemDetailFeatureName1"
+                    android:id="@+id/tvItemDetailCondition"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/margin_default_value"
-                    android:layout_marginTop="@dimen/margin_default_value"
+                    android:layout_marginEnd="@dimen/margin_extrabig_value"
                     android:fontFamily="@font/proxima_nova_light"
-                    android:textSize="@dimen/size_font_detail_item_feature_name"/>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:orientation="horizontal">
+                    android:textSize="@dimen/size_font_detail_item_condition" />
 
                 <TextView
-                    android:id="@+id/tvItemDetailFeatureName2"
+                    android:id="@+id/tvItemDetailSold"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/margin_default_value"
+                    android:layout_marginEnd="@dimen/margin_extraextralight_value"
                     android:fontFamily="@font/proxima_nova_light"
-                    android:textSize="@dimen/size_font_detail_item_feature_name" />
+                    android:textSize="@dimen/size_font_detail_item_condition" />
+
+                <TextView
+                    android:id="@+id/tvItemDetailSoldDeference"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/proxima_nova_light"
+                    android:text="@string/text_sold"
+                    android:textSize="@dimen/size_font_detail_item_condition" />
+
 
             </LinearLayout>
-        </LinearLayout>
 
-
-        <LinearLayout
+            <TextView
+                android:id="@+id/tvItemDetailTitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:layout_marginLeft="@dimen/margin_default_value"
+                android:layout_marginRight="@dimen/margin_default_value"
+                android:fontFamily="@font/proxima_nova_reg"
+                android:textSize="@dimen/size_font_detail_item_title" />
 
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_weight="1"
+            <TextView
+                android:id="@+id/tvItemDetailPrice"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
-                <TextView
-                    android:id="@+id/tvItemDetailFeatureValue1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/margin_extraextralight_value"
-                    android:layout_marginStart="@dimen/margin_default_value"
-                    android:fontFamily="@font/proxima_nova_reg"
-                    android:textSize="@dimen/size_font_detail_item_feature_value"/>
+                android:layout_margin="@dimen/margin_default_value"
+                android:fontFamily="@font/proxima_nova_bold"
+                android:textSize="@dimen/size_font_detail_item_price" />
 
-            </LinearLayout>
+            <View style="@style/Divider" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_default_value"
+                android:fontFamily="@font/proxima_nova_reg"
+                android:text="@string/text_features"
+                android:textSize="@dimen/size_font_detail_item_title_features"
+                android:textStyle="bold" />
+
 
             <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:baselineAligned="false"
+                android:orientation="horizontal">
+
+                <LinearLayout
                     android:layout_width="0dp"
+                    android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:layout_height="wrap_content"
                     android:orientation="horizontal">
-                <TextView
-                    android:id="@+id/tvItemDetailFeatureValue2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/margin_extraextralight_value"
-                    android:fontFamily="@font/proxima_nova_reg"
-                    android:textSize="@dimen/size_font_detail_item_feature_value"/>
+
+                    <TextView
+                        android:id="@+id/tvItemDetailFeatureName1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_default_value"
+                        android:layout_marginTop="@dimen/margin_default_value"
+                        android:fontFamily="@font/proxima_nova_light"
+                        android:textSize="@dimen/size_font_detail_item_feature_name" />
+
                 </LinearLayout>
-         </LinearLayout>
 
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+                    <TextView
+                        android:id="@+id/tvItemDetailFeatureName2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_default_value"
+                        android:fontFamily="@font/proxima_nova_light"
+                        android:textSize="@dimen/size_font_detail_item_feature_name" />
+
+                </LinearLayout>
+            </LinearLayout>
+
 
             <LinearLayout
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:baselineAligned="false"
                 android:orientation="horizontal">
 
-                <TextView
-                    android:id="@+id/tvItemDetailFeatureName3"
-                    android:layout_width="wrap_content"
+                <LinearLayout
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/margin_default_value"
-                    android:layout_marginTop="@dimen/margin_default_value"
-                    android:fontFamily="@font/proxima_nova_light"
-                    android:textSize="@dimen/size_font_detail_item_feature_name"/>
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
 
+                    <TextView
+                        android:id="@+id/tvItemDetailFeatureValue1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_default_value"
+                        android:layout_marginTop="@dimen/margin_extraextralight_value"
+                        android:fontFamily="@font/proxima_nova_reg"
+                        android:textSize="@dimen/size_font_detail_item_feature_value" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tvItemDetailFeatureValue2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_extraextralight_value"
+                        android:fontFamily="@font/proxima_nova_reg"
+                        android:textSize="@dimen/size_font_detail_item_feature_value" />
+                </LinearLayout>
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:baselineAligned="false"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tvItemDetailFeatureName3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_default_value"
+                        android:layout_marginTop="@dimen/margin_default_value"
+                        android:fontFamily="@font/proxima_nova_light"
+                        android:textSize="@dimen/size_font_detail_item_feature_name" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tvItemDetailFeatureName4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_default_value"
+                        android:fontFamily="@font/proxima_nova_light"
+                        android:textSize="@dimen/size_font_detail_item_feature_name" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:baselineAligned="false"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tvItemDetailFeatureValue3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_default_value"
+                        android:layout_marginTop="@dimen/margin_extraextralight_value"
+                        android:fontFamily="@font/proxima_nova_reg"
+                        android:textSize="@dimen/size_font_detail_item_feature_value" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tvItemDetailFeatureValue4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_extraextralight_value"
+                        android:fontFamily="@font/proxima_nova_reg"
+                        android:textSize="@dimen/size_font_detail_item_feature_value" />
+                </LinearLayout>
             </LinearLayout>
 
             <LinearLayout
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:baselineAligned="false"
                 android:orientation="horizontal">
 
-                <TextView
-                    android:id="@+id/tvItemDetailFeatureName4"
-                    android:layout_width="wrap_content"
+                <LinearLayout
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/margin_default_value"
-                    android:fontFamily="@font/proxima_nova_light"
-                    android:textSize="@dimen/size_font_detail_item_feature_name" />
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
 
+                    <TextView
+                        android:id="@+id/tvItemDetailFeatureName5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_default_value"
+                        android:layout_marginTop="@dimen/margin_default_value"
+                        android:fontFamily="@font/proxima_nova_light"
+                        android:textSize="@dimen/size_font_detail_item_feature_name" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tvItemDetailFeatureName6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_default_value"
+                        android:fontFamily="@font/proxima_nova_light"
+                        android:textSize="@dimen/size_font_detail_item_feature_name" />
+
+                </LinearLayout>
             </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/margin_default_value"
+                android:baselineAligned="false"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tvItemDetailFeatureValue5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_default_value"
+                        android:layout_marginTop="@dimen/margin_extraextralight_value"
+                        android:fontFamily="@font/proxima_nova_reg"
+                        android:textSize="@dimen/size_font_detail_item_feature_value" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tvItemDetailFeatureValue6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_extraextralight_value"
+                        android:fontFamily="@font/proxima_nova_reg"
+                        android:textSize="@dimen/size_font_detail_item_feature_value" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <View style="@style/Divider" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_default_value"
+
+                android:fontFamily="@font/proxima_nova_reg"
+                android:text="@string/text_accept_mp"
+                android:textSize="@dimen/size_font_detail_item_title_features"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvItemDetailAcceptMercadopago"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_default_value"
+                android:layout_marginBottom="@dimen/margin_default_value"
+                android:fontFamily="@font/proxima_nova_reg"
+                android:textSize="@dimen/size_font_detail_item_mp_acepts"/>
         </LinearLayout>
+</ScrollView>
 
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-                <TextView
-                    android:id="@+id/tvItemDetailFeatureValue3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/margin_extraextralight_value"
-                    android:layout_marginStart="@dimen/margin_default_value"
-                    android:fontFamily="@font/proxima_nova_reg"
-                    android:textSize="@dimen/size_font_detail_item_feature_value"/>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-                <TextView
-                    android:id="@+id/tvItemDetailFeatureValue4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/margin_extraextralight_value"
-                    android:fontFamily="@font/proxima_nova_reg"
-                    android:textSize="@dimen/size_font_detail_item_feature_value"/>
-            </LinearLayout>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:id="@+id/tvItemDetailFeatureName5"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/margin_default_value"
-                    android:layout_marginTop="@dimen/margin_default_value"
-                    android:fontFamily="@font/proxima_nova_light"
-                    android:textSize="@dimen/size_font_detail_item_feature_name"/>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:id="@+id/tvItemDetailFeatureName6"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/margin_default_value"
-                    android:fontFamily="@font/proxima_nova_light"
-                    android:textSize="@dimen/size_font_detail_item_feature_name"/>
-
-            </LinearLayout>
-        </LinearLayout>
-
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-                <TextView
-                    android:id="@+id/tvItemDetailFeatureValue5"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/margin_extraextralight_value"
-                    android:layout_marginStart="@dimen/margin_default_value"
-                    android:fontFamily="@font/proxima_nova_reg"
-                    android:textSize="@dimen/size_font_detail_item_feature_value"/>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-                <TextView
-                    android:id="@+id/tvItemDetailFeatureValue6"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/margin_extraextralight_value"
-                    android:fontFamily="@font/proxima_nova_reg"
-                    android:textSize="@dimen/size_font_detail_item_feature_value"/>
-            </LinearLayout>
-        </LinearLayout>
-
-        <View
-            style="@style/Divider" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/margin_default_value"
-            android:fontFamily="@font/proxima_nova_reg"
-            android:textSize="@dimen/size_font_detail_item_title_features"
-            android:textStyle="bold"
-            android:text="@string/text_accept_mp" />
-
-        <TextView
-            android:id="@+id/tvItemDetailAcceptMercadopago"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/margin_default_value"
-            android:fontFamily="@font/proxima_nova_reg"
-            android:textSize="@dimen/size_font_detail_item_price"
-            android:textStyle="bold" />
-    </LinearLayout>
-
-
-</LinearLayout>

@@ -13,10 +13,10 @@
     <!--Font size list item detail values-->
     <dimen name="size_font_detail_item_condition">14sp</dimen>
     <dimen name="size_font_detail_item_sold">14sp</dimen>
-    <dimen name="size_font_detail_item_title">28sp</dimen>
-    <dimen name="size_font_detail_item_price">28sp</dimen>
+    <dimen name="size_font_detail_item_title">30sp</dimen>
+    <dimen name="size_font_detail_item_price">34sp</dimen>
     <dimen name="size_font_detail_item_title_features">24sp</dimen>
-    <dimen name="size_font_detail_item_mp_acepts">16sp</dimen>
+    <dimen name="size_font_detail_item_mp_acepts">20sp</dimen>
     <dimen name="size_font_detail_item_feature_name">14sp</dimen>
     <dimen name="size_font_detail_item_feature_value">20sp</dimen>
 

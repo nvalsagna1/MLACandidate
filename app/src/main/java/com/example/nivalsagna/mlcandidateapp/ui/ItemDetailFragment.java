@@ -106,34 +106,32 @@ public class ItemDetailFragment extends Fragment {
     private void setItemDetailsValues(ItemDetail itemDetail) {
 
         tvTitle.setText(itemDetail.getTitle());
-        String tmpPrice = String.format("%.2f", itemDetail.getPrice());
+        String tmpPrice = String.format("%.0f", itemDetail.getPrice());
         String tmpCurrency = itemDetail.getCurrency_id();
-        if (tmpCurrency.equals("USD")){
-            tmpCurrency = "U$S " + tmpPrice;
-            tvPrice.setText(tmpCurrency);
+        if (tmpCurrency.equals(getResources().getString(R.string.text_dolar_api_value))){
+            tmpCurrency = getResources().getString(R.string.text_currency_dolar) + " " + tmpPrice;
         } else {
-            tmpCurrency = "$ " + tmpPrice;
-            tvPrice.setText(tmpCurrency);
+            tmpCurrency = getResources().getString(R.string.text_currency_pesos) + " " + tmpPrice;
+        }
+         tvPrice.setText(tmpCurrency);
 
 
         String tmpCondition = itemDetail.getCondition();
-        if (tmpCondition.equals("new")){
-            tvCondition.setText("nuevo");
+        if (tmpCondition.equals(getResources().getString(R.string.text_new_api_value))){
+            tvCondition.setText(getResources().getString(R.string.text_condition_new));
         } else{
-            tvCondition.setText("usado");
+            tvCondition.setText(getResources().getString(R.string.text_condition_used));
         }
 
         tvSoldQuantity.setText(String.valueOf(itemDetail.getSold_quantity()));
         lstItemPictures = itemDetail.getPictures();
         lstItemAttributes = itemDetail.getAttributes();
         if (!itemDetail.getAccepts_mercadopago()){
-            tvMercadoPago.setText("No");
+            tvMercadoPago.setText(getResources().getString(R.string.text_negative));
         } else{
-            tvMercadoPago.setText("Sí");
+            tvMercadoPago.setText(getResources().getString(R.string.text_afirmative));
         }
 
-
-        tvMercadoPago.setText(String.valueOf(itemDetail.getAccepts_mercadopago()));
 
         //ACA SETEO LOS VALORES DE LA VISTA Al Adapter
 
@@ -174,7 +172,6 @@ public class ItemDetailFragment extends Fragment {
                 break;
             }
         }
-    }
     }
 
 }

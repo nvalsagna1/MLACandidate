@@ -51,14 +51,17 @@ implements View.OnClickListener {
             itemsViewHolder.tvItemTitle.setText(itemsViewHolder.mItem.getTitle());
 
             String tmpPrice = String.format("%.0f", itemsViewHolder.mItem.getPrice());
-
             String tmpCurrency = itemsViewHolder.mItem.getCurrency_id();
-            if (tmpCurrency.equals("USD")){
-                tmpCurrency = "U$S ";
+
+            if (tmpCurrency.equals(ctx.getResources().getString(R.string.text_dolar_api_value))){
+                tmpCurrency = ctx.getResources().getString(R.string.text_currency_dolar) + " " + tmpPrice;
             } else {
-                tmpCurrency = "$ ";
+                tmpCurrency = ctx.getResources().getString(R.string.text_currency_pesos) + " " + tmpPrice;
             }
-            itemsViewHolder.tvItemPrice.setText(tmpCurrency.concat(tmpPrice));
+
+            itemsViewHolder.tvItemPrice.setText(tmpCurrency);
+
+
 
             String photo = itemsViewHolder.mItem.getThumbnail();
             if (!photo.equals("")) {
