@@ -9,6 +9,7 @@ import android.widget.Toast;
 
 import com.example.nivalsagna.mlcandidateapp.model.ItemCatalog;
 import com.example.nivalsagna.mlcandidateapp.model.ItemDetail;
+import com.example.nivalsagna.mlcandidateapp.model.MyApp;
 import com.example.nivalsagna.mlcandidateapp.service.ItemClient;
 import com.example.nivalsagna.mlcandidateapp.service.ItemService;
 import com.example.nivalsagna.mlcandidateapp.ui.MainActivity;
@@ -74,20 +75,26 @@ public class ItemRepository {
                     if (httpException.code() >= HTTP_BAD_REQUEST && httpException.code() < HTTP_INTERNAL_ERROR){
                         //bad request
                         Log.e("getItemDetailCall","Response = " + httpException.code() + " - " + httpException.message());
+                        //error inesperado
+                        Toast.makeText(MyApp.getContext(), "Lo sentimos! Ha ocurrido un error inesperado", Toast.LENGTH_LONG).show();
                     }
                     else{
                         //error inesperado
                         Log.e("getItemDetailCall","Response = " + httpException.code() + " - " + httpException.message());
+                        Toast.makeText(MyApp.getContext(), "Lo sentimos! atualmente no podemos procesar su petición", Toast.LENGTH_LONG).show();
                     }
                 }
                 else if (e instanceof  IOException){
                     //error de red
                     Log.e("getItemDetailCall","Error de red = " + e.getMessage());
+                    Toast.makeText(MyApp.getContext(), "Ups! revise su conexión a internet y vuelva a intentarlo", Toast.LENGTH_LONG).show();
 
                 }
                 else{
                     //error inesperado
                     Log.e("getItemDetailCall","Error Inesperado = " + e.getMessage());
+                    //error inesperado
+                    Toast.makeText(MyApp.getContext(), "Lo sentimos! Ha ocurrido un error inesperado", Toast.LENGTH_LONG).show();
                 }
 
             }
@@ -128,20 +135,25 @@ public class ItemRepository {
                     if (httpException.code() >= HTTP_BAD_REQUEST && httpException.code() < HTTP_INTERNAL_ERROR){
                         //bad request
                         Log.e("getItemCatalogCall","Response = " + httpException.code() + " - " + httpException.message());
+                        //error inesperado
+                        Toast.makeText(MyApp.getContext(), "Lo sentimos! Ha ocurrido un error inesperado", Toast.LENGTH_LONG).show();
                     }
                     else{
                         //error inesperado
                         Log.e("getItemCatalogCall","Response = " + httpException.code() + " - " + httpException.message());
+                        Toast.makeText(MyApp.getContext(), "Lo sentimos! atualmente no podemos procesar su petición", Toast.LENGTH_LONG).show();
                     }
                 }
                 else if (e instanceof  IOException){
                     //error de red
                     Log.e("getItemCatalogCall","Error de red = " + e.getMessage());
+                    Toast.makeText(MyApp.getContext(), "Ups! revise su conexión a internet y vuelva a intentarlo", Toast.LENGTH_LONG).show();
 
                 }
                 else{
                     Log.e("getItemCatalogCall","Error Inesperado = " + e.getMessage());
                     //error inesperado
+                    Toast.makeText(MyApp.getContext(), "Lo sentimos! Ha ocurrido un error inesperado", Toast.LENGTH_LONG).show();
                 }
             }
 
