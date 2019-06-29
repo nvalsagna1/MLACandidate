@@ -3,18 +3,18 @@
 ## Descripción del Proyecto
 El proyecto MLCandidate consiste en una aplicación mobile realizada sobre la plataforma Android Studio como test práctico para un proceso de selección de personal.
 Si bien los tiempos de desarrollo se limitaron a algunas horas fuera de la jornada laboral primaria.
-Se busco seguir de la mejor forma posible las recomendaciones oficiales acerca de cuales librerias serian mas optimas para cada funcion dentro del proyecto al momento en que se llevo a cabo el mismo.
+Se busco seguir de la mejor forma posible las recomendaciones oficiales acerca de cuales librerias serían mas óptimas para cada función dentro del proyecto al momento en que se llevo a cabo el mismo.
  Los aspectos mas destacados de la implementación son:
 - Modelo MVVM para organizar el codigo. 	
 - Retrofit + rxJava + Gson para las llamadas a los servicios.
-- Implementacion de Viewmodel con LiveData.  
+- Implementación de Viewmodel con LiveData.  
 - Gestion de la carga de imagenes fuera de la cache del dispositivo.
-- Glide y Picasso como librerias para la obtencion de imagenes.
+- Glide y Picasso como librerias para la obtención de imagenes.
 - Manejo de Fragments.
 - Uso de Logs internos.
 - Etc.
 
-Dentro del apartado visual, se siguieron los lineamientos indicados dentro de la libreria de diseño de la organizacion. 
+En el apartado visual, se siguieron los lineamientos indicados en la libreria de diseño de la organizacion. 
 Los mismos se encuentran dentro del Manual de Marca de ML, obtenidos desde la siguiente URL http://ux.mercadolibre.com/#design.
 Se adoptaron colores oficiales, logos y las distintas fuentes de texto.
 
@@ -43,21 +43,21 @@ Necesitas disponer de un telefono con sistema operativo Android que contenga ins
 
 
 ## Contribuciones
-Las Pull request son bienvenidas. Para cambios significativos, por favor abrir primero un issue para discutir que le gustaria cambiar y como lo implementaria.
-Por favor, asegurese de actualizar la documentación de la manera correspondiente.
+Las Pull request son bienvenidas. Para cambios significativos, por favor abrir primero un issue para discutir que te gustaria cambiar y como lo harias.
+Favor de actualizar este archivo de la manera correspondiente.
 
 
 ## RoadMap
-A nivel funcional y sin entrar en apartados especificos que requieran de un login de usuario y el manejo de tokens dentro de la aplicacion.	
+A nivel funcional y sin entrar en apartados específicos que requieran de un login de usuario y el manejo de tokens dentro de la aplicación.	
 
-- Visualizacion de las ultimas busquedas realizadas.
+- Visualización de las últimas busquedas realizadas.
 - Opciones de filtrado sobre los resultados obtenidos en la búsqueda, a fin de acotar la cantidad de elementos que coincidan con nuestras preferencias.
-- Mayor nivel de detalle en caracteristicas de un item seleccionado, incluyendo formas de pago, Modalidad de envio Y carga dinámica de Atributos (Podria implementarse con un RecyclerView, Actualmente el numero de atributos esta limitado a los primeros 6).
-- Incluir Fragments que se adapten a distintos tamaños de pantalla, a fin de poder visualizar la aplicacion de manera optima en todos los dispositivos.
+- Mayor nivel de detalle en características de un item seleccionado, incluyendo formas de pago, Modalidad de envío Y carga dinámica de Atributos (Podria implementarse con un RecyclerView, Actualmente el numero de atributos esta limitado a los primeros 6).
+- Incluir Fragments que se adapten a distintos tamaños de pantalla, a fin de poder visualizar la aplicación de manera optima en todos los dispositivos.
 - Controles y mejoras en las vistas. Detalles al usuario de los errores obtenidos.
 
 
 ## Soporte
-Ante cualquier dificultad con el funcionamiento de la aplicacion, el entendimiento de la misma u otros motivos. No dude en ponerse en contacto. Podes encontrarme aca nicolasvalsagna@gmail.com.
+Ante cualquier dificultad con el funcionamiento de la aplicación, el entendimiento de la misma u otros motivos. No dude en ponerse en contacto. Podes encontrarme aca nicolasvalsagna@gmail.com.
 
 
