@@ -8,7 +8,6 @@ Se busco seguir de la mejor forma posible las recomendaciones oficiales acerca d
 - Modelo MVVM para organizar el codigo. 	
 - Retrofit + rxJava + Gson para las llamadas a los servicios.
 - Implementación de Viewmodel con LiveData.  
-- Gestion de la carga de imagenes fuera de la cache del dispositivo.
 - Glide y Picasso como librerias para la obtención de imagenes.
 - Manejo de Fragments.
 - Uso de Logs internos.
