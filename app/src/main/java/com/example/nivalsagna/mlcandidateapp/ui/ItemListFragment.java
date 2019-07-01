@@ -41,6 +41,9 @@ public class ItemListFragment extends Fragment {
     private ItemDetailViewModel itemDetailViewModel;
     private ItemRecyclerViewAdapter adapter;
     private String idItemClicked = "";
+    private String titletemClicked = "";
+    private Double priceItemClicked;
+    private String currencyItemClicked;
 
 
     public ItemListFragment() {
@@ -80,6 +83,15 @@ public class ItemListFragment extends Fragment {
                 @Override
                 public void onClick(View v) {
                     idItemClicked = itemList.get(itemrecyclerView.getChildAdapterPosition(v)).getId();
+                    priceItemClicked = itemList.get(itemrecyclerView.getChildAdapterPosition(v)).getPrice();
+                    titletemClicked = itemList.get(itemrecyclerView.getChildAdapterPosition(v)).getTitle();
+                    currencyItemClicked = itemList.get(itemrecyclerView.getChildAdapterPosition(v)).getCurrency_id();
+
+                    Bundle itemArgs = new Bundle();
+                    itemArgs.putString("titleitemclicked",titletemClicked);;
+                    itemArgs.putDouble("priceitemclicked",priceItemClicked);
+                    itemArgs.putString("currencyitemclicked",currencyItemClicked);
+
 
                     itemDetailViewModel = ViewModelProviders.of(
                             getActivity()).get(ItemDetailViewModel.class);
@@ -88,6 +100,7 @@ public class ItemListFragment extends Fragment {
                     Log.i("getItemDetailCall","Búsqueda de detalles de un producto, ID = " + idItemClicked);
 
                     Fragment itemDetailFragment = new ItemDetailFragment();
+                    itemDetailFragment.setArguments(itemArgs);
                     getFragmentManager()
                             .beginTransaction()
                             .replace(R.id.fragmentContainer, itemDetailFragment)

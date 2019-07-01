@@ -68,9 +68,9 @@ implements View.OnClickListener {
                 Glide.with(ctx)
                         .load(itemsViewHolder.mItem.getThumbnail())
                         .dontAnimate()
-                        .error(ctx.getResources().getDrawable(R.drawable.ic_block_black_24dp))
-                        .diskCacheStrategy(DiskCacheStrategy.NONE)
-                        .skipMemoryCache(true)
+                        //.error(ctx.getResources().getDrawable(R.drawable.ic_block_black_24dp))
+                        //.diskCacheStrategy(DiskCacheStrategy.NONE)
+                        //.skipMemoryCache(true)
                         .into(itemsViewHolder.ivThumbnail);
 
             }

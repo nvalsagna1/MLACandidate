@@ -42,7 +42,6 @@
                     android:id="@+id/tvItemDetailSoldDeference"
                     style="@style/AllwrapContentStyle"
                     android:fontFamily="@font/proxima_nova_light"
-                    android:text="@string/text_sold"
                     android:textSize="@dimen/size_font_detail_item_condition" />
 
 

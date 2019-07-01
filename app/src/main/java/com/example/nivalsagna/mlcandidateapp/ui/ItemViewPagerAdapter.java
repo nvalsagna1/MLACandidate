@@ -45,7 +45,7 @@ public class ItemViewPagerAdapter extends PagerAdapter {
                 .load(imageUrls.get(position).getSecure_url())
                 .fit()
                 //.centerCrop()
-                .error(context.getResources().getDrawable(R.drawable.ic_block_black_24dp))
+               // .error(context.getResources().getDrawable(R.drawable.ic_block_black_24dp))
                 .centerInside()
                 .into(imageView);
 

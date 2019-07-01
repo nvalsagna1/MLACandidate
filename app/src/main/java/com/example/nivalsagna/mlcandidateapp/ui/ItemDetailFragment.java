@@ -2,19 +2,16 @@ package com.example.nivalsagna.mlcandidateapp.ui;
 
 
 import android.arch.lifecycle.Observer;
-import android.arch.lifecycle.ViewModelProvider;
+
 import android.arch.lifecycle.ViewModelProviders;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
-import android.support.v7.app.ActionBar;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Switch;
 import android.widget.TextView;
 
 import com.example.nivalsagna.mlcandidateapp.R;
@@ -25,9 +22,8 @@ import com.example.nivalsagna.mlcandidateapp.model.ItemPicture;
 
 import org.w3c.dom.Text;
 
-import java.text.AttributedCharacterIterator;
 import java.util.List;
-import java.util.jar.Attributes;
+
 
 /**
  * A simple {@link Fragment} subclass.
@@ -39,7 +35,7 @@ public class ItemDetailFragment extends Fragment {
     private TextView tvTitle;
     private TextView tvPrice;
     private TextView tvCondition;
-    private TextView tvAvailableQuantity;
+    private TextView tvSoldReference;
     private TextView tvSoldQuantity;
     private TextView tvMercadoPago;
     private TextView tvAttributeTile1;
@@ -54,6 +50,7 @@ public class ItemDetailFragment extends Fragment {
     private TextView tvAttributeValue5;
     private TextView tvAttributeTile6;
     private TextView tvAttributeValue6;
+
 
 
     private List<ItemPicture> lstItemPictures;
@@ -87,7 +84,24 @@ public class ItemDetailFragment extends Fragment {
         tvAttributeValue5 = view.findViewById(R.id.tvItemDetailFeatureValue5);
         tvAttributeTile6 =view.findViewById(R.id.tvItemDetailFeatureName6);
         tvAttributeValue6 = view.findViewById(R.id.tvItemDetailFeatureValue6);
+        tvSoldReference = view.findViewById(R.id.tvItemDetailSoldDeference);
         viewPager = view.findViewById(R.id.view_pager);
+
+        Bundle itemArgs = getArguments();
+        String tmpPrice = String.format("%.0f", itemArgs.getDouble("priceitemclicked"));
+        String tmpCurrency = itemArgs.getString("currencyitemclicked");
+
+
+        if (tmpCurrency.equals(getResources().getString(R.string.text_dolar_api_value))){
+            tmpCurrency = getResources().getString(R.string.text_currency_dolar) + " " + tmpPrice;
+        } else {
+            tmpCurrency = getResources().getString(R.string.text_currency_pesos) + " " + tmpPrice;
+        }
+
+        tvPrice.setText(tmpCurrency);
+        tvTitle.setText(itemArgs.getString("titleitemclicked"));
+        Log.i("setItemDetail","Seteo de datos del primarios del Item cliqueado");
+
 
         itemDetailViewModel = ViewModelProviders.of(getActivity())
                 .get(ItemDetailViewModel.class);
@@ -95,7 +109,7 @@ public class ItemDetailFragment extends Fragment {
             @Override
             public void onChanged(@Nullable ItemDetail itemDetail) {
                 setItemDetailsValues(itemDetail);
-                Log.i("getItemDetail","Seteo de datos del ItemDetailViewModel");
+                Log.i("setItemDetail","Seteo de datos completos del ItemDetailViewModel");
             }
         });
 
@@ -123,6 +137,7 @@ public class ItemDetailFragment extends Fragment {
         }
 
         tvSoldQuantity.setText(String.valueOf(itemDetail.getSold_quantity()));
+        tvSoldReference.setText(R.string.text_sold);
         lstItemPictures = itemDetail.getPictures();
         lstItemAttributes = itemDetail.getAttributes();
         if (!itemDetail.getAccepts_mercadopago()){
